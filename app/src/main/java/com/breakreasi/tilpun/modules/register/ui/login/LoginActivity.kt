@@ -28,6 +28,7 @@ class LoginActivity : CoreActivity() {
 
         val username = binding.username
         val password = binding.password
+        val server = binding.server
         val login = binding.login
         val loading = binding.loading
 
@@ -45,6 +46,9 @@ class LoginActivity : CoreActivity() {
             }
             if (loginState.passwordError != null) {
                 password.error = getString(loginState.passwordError)
+            }
+            if (loginState.serverError != null) {
+                server.error = getString(loginState.serverError)
             }
         })
 
@@ -67,7 +71,8 @@ class LoginActivity : CoreActivity() {
         username.afterTextChanged {
             loginViewModel.loginDataChanged(
                 username.text.toString(),
-                password.text.toString()
+                password.text.toString(),
+                server.text.toString()
             )
         }
 
@@ -75,7 +80,8 @@ class LoginActivity : CoreActivity() {
             afterTextChanged {
                 loginViewModel.loginDataChanged(
                     username.text.toString(),
-                    password.text.toString()
+                    password.text.toString(),
+                    server.text.toString()
                 )
             }
 
@@ -84,7 +90,8 @@ class LoginActivity : CoreActivity() {
                     EditorInfo.IME_ACTION_DONE ->
                         loginViewModel.login(
                             username.text.toString(),
-                            password.text.toString()
+                            password.text.toString(),
+                            server.text.toString()
                         )
                 }
                 false
@@ -92,7 +99,7 @@ class LoginActivity : CoreActivity() {
 
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
-                loginViewModel.login(username.text.toString(), password.text.toString())
+                loginViewModel.login(username.text.toString(), password.text.toString(), server.text.toString())
             }
         }
     }
