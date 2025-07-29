@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Tilpun"
+rootProject.name = "Tilfun"
 include(":app")
 include(":voip_android_2")
 project(":voip_android_2").projectDir = File("../voip_android_2")

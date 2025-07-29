@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tilpun</string>
+    <string name="app_name">Tilfun</string>
     <string name="title_calls">Panggilan</string>
     <string name="title_history">Riwayat</string>
     <string name="title_activity_login">LoginActivity</string>
