@@ -56,5 +56,5 @@
 
 ```bash
 git clone https://github.com/usamahisam/tilfun.git
-cd voip-call-tester
+cd tilfun
 ./gradlew assembleDebug
